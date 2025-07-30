@@ -73,7 +73,7 @@ elif [[ x"${release}" == x"debian" ]]; then
     fi
 fi
 
-install-base() {
+install_base() {
     if [[ x"${release}" == x"centos" ]]; then
         yum install wget curl tar -y
     else
@@ -102,7 +102,7 @@ config_after_install() {
     fi
 }
 
-install-x-ui() {
+install_x_ui() {
     systemctl stop x-ui
     cd /usr/local/
 
@@ -171,5 +171,5 @@ install-x-ui() {
 }
 
 echo -e "${green}开始安装${plain}"
-install-base
-install-x-ui $1
+install_base
+install_x_ui $1
